@@ -1,0 +1,19 @@
+{
+  "name": "lista",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --entry-file=index.html" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shtephen3C/Szko-a-Lista.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shtephen3C/Szko-a-Lista/issues"
+  },
+  "homepage": "https://github.com/Shtephen3C/Szko-a-Lista#readme"
+}
