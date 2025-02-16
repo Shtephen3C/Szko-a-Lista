@@ -41,7 +41,7 @@ a:hover{
     color: darkblue;
     padding-top: 15px;
     padding-bottom: 15px;
-    font-size: 20px;
+    font-size: 18px;
     transition: padding-top 500ms;
     transition: padding-bottom 500ms;
     transition: font-size 500ms;
@@ -49,7 +49,7 @@ a:hover{
 #nav{
     outline-style: inset;
     border-width: 4px;
-    position: fixed;
+    position: sticky;
     width: 100px;
     height: 200px;
     padding: 10px;
@@ -57,8 +57,8 @@ a:hover{
     background-color: gray;
     display: flex;
     flex-flow: column nowrap;
-    left: 420px;
     top: 20px;
+    justify-self: flex-end;
 }
 p span{
     font-family: Gill Sans;
@@ -68,6 +68,9 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    display: grid;
+    grid-template-columns: 1fr min-content 1fr;
+    gap: 20px;
 }
 /* ul.sq li{
     list-style-type: square;
@@ -109,8 +112,8 @@ label {
     padding: 4px;
     gap: 4px;
     border-radius: 10px;
-    height: 150px;
-    width: 150px;
+    height: 180px;
+    width: 180px;
     overflow: hidden;
 }
 .pre_hardmode{
@@ -148,7 +151,9 @@ ul {
     border-radius: 7px;
 }
 img{
-    max-width: 100px;
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
 }
 h3, h4{
     text-align: center;
@@ -159,3 +164,71 @@ input:not(:checked) ~ .opis {
 input:checked ~ div:has(img) {
     display: none;
 }
+div:has(img){
+    text-align: center;
+}
+.rotated img{
+    transform: rotate(-45deg);
+    transition: all 3s ease-out;
+    &:hover {
+        animation:spin 1s linear infinite;
+        transition: all 1s ease-in;
+    }
+}
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.rotated2 img{
+transition: all 3s ease-out;
+&:hover {
+    animation:spin 1s linear infinite;
+    transition: all 1s ease-in;
+}
+}
+@keyframes spin{
+0%{
+    transform: rotate(0deg);
+}
+100%{
+    transform: rotate(360deg);
+}
+}
+.beenade img{
+    transform: rotate(45deg);
+    transition: all 3s ease-out;
+    &:hover {
+        animation:spin 1s linear infinite;
+        transition: all 1s ease-in;
+    }
+}
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.opis{
+    font-size: 14px;
+}
+@media (max-width: 1130px) {
+    body{
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content 1fr;
+    }
+    #nav{
+        flex-flow: row nowrap;
+        width: unset;
+        height: unset;
+        justify-self: unset;
+        justify-content: center;
+        z-index: 1;
+        top: 0;
+    }
+  }
